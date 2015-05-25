@@ -123,43 +123,53 @@ void JatekAblak::handle(event ev)
                 {
                     for( int l=0; l<c.size(); l++)
                     {
-                        if(c[i].color=="piros" && ev.button!=0 && ev.button!=-1)
+                        for( int m=0; m<c.size(); m++)
                         {
-                            p_db++;
-                            if(c[j].color=="piros" && c[j].oszlopa==c[i].oszlopa && c[j].sora==c[i].sora+1)
+
+
+                            if(c[i].color=="piros" && ev.button!=0 && ev.button!=-1)
                             {
                                 p_db++;
-                                if(c[k].color=="piros" && c[k].oszlopa==c[j].oszlopa && c[k].sora==c[j].sora+1 )
+                                if(c[j].color=="piros" && c[j].oszlopa==c[i].oszlopa && c[j].sora==c[i].sora+1)
                                 {
-                                    if( p_win )
-                                    {
-                                        gout << move_to(0,0)<< color(250,20,20)<<box(size_x,size_y);
-                                        gout << move_to(size_x/2-75,size_x/2-75) <<color(255,255,255)<<text("Piros jatekos nyert!");
-                                    }
                                     p_db++;
+                                    if(c[k].color=="piros" && c[k].oszlopa==c[j].oszlopa && c[k].sora==c[j].sora+1 )
                                     {
-                                        if(c[l].color=="piros"&& c[l].oszlopa==c[k].oszlopa && c[l].sora==c[k].sora+1)
+                                        p_db++;
+                                        if( c[l].color=="piros" && c[l].oszlopa==c[k].oszlopa && c[l].sora==c[k].sora+1)
+                                        {
                                             p_db++;
-                                        p_win=true;
-                                        cout << "p nyert"<<endl;
+
+
+                                            {
+                                                if(c[l].color=="piros"&& c[l].oszlopa==c[k].oszlopa && c[l].sora==c[k].sora+1)
+                                                    p_db++;
+                                                p_win=true;
+                                                cout << "p nyert"<<endl;
+                                            }
+                                        }
+
                                     }
                                 }
                             }
-                        }
-                        else if(c[i].color=="kek" && ev.button!=0 && ev.button!=-1)
-                        {
-                            k_db++;
-                            if(c[j].color=="kek" && c[j].oszlopa==c[i].oszlopa && c[j].sora==c[i].sora+1)
+                            else if(c[i].color=="kek" && ev.button!=0 && ev.button!=-1)
                             {
                                 k_db++;
-                                if(c[k].color=="kek" && c[k].oszlopa==c[j].oszlopa && c[k].sora==c[j].sora+1 )
+                                if(c[j].color=="kek" && c[j].oszlopa==c[i].oszlopa && c[j].sora==c[i].sora+1)
                                 {
                                     k_db++;
+                                    if(c[k].color=="kek" && c[k].oszlopa==c[j].oszlopa && c[k].sora==c[j].sora+1 )
                                     {
-                                        if(c[l].color=="kek"&& c[l].oszlopa==c[k].oszlopa && c[l].sora==c[k].sora+1)
-                                            k_db++;
-                                        k_win=true;
-                                        cout << "k nyert"<<endl;
+                                        k_db++;
+                                        {
+                                            if(c[l].color=="kek"&& c[l].oszlopa==c[k].oszlopa && c[l].sora==c[k].sora+1)
+                                            {
+                                                k_db++;
+                                                k_win=true;
+                                                cout << "k nyert"<<endl;
+                                            }
+
+                                        }
                                     }
                                 }
                             }
