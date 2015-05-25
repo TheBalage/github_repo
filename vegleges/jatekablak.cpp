@@ -205,22 +205,22 @@ void JatekAblak::handle(event ev)
                         ///Bal atlo
                         if(c[i].color=="piros" && ev.button!=0 && ev.button!=-1)
                         {
-                            if(c[j].color=="piros" && c[j].oszlopa+1==c[i].oszlopa && c[j].sora+1==c[i].sora)
+                            if(c[j].color=="piros" && c[i].oszlopa==c[j].oszlopa+1 && c[i].sora==c[j].sora-1)
                             {
-                                if(c[k].color=="piros" && c[k].oszlopa+1==c[j].oszlopa && c[k].sora+1==c[j].sora)
+                                if(c[k].color=="piros" && c[j].oszlopa==c[k].oszlopa+1 && c[j].sora==c[k].sora-1)
                                 {
-                                    if(c[l].color=="piros" && c[l].oszlopa+1==c[k].oszlopa && c[l].sora+1==c[k].sora)
+                                    if(c[l].color=="piros" && c[k].oszlopa==c[l].oszlopa+1 && c[k].sora==c[l].sora-1)
                                         p_win=true;
                                 }
                             }
                         }
                         else if(c[i].color=="kek" && ev.button!=0 && ev.button!=-1)
                         {
-                            if(c[j].color=="kek" && c[j].oszlopa+1==c[i].oszlopa-1 && c[j].sora+1==c[i].sora)
+                            if(c[j].color=="kek" && c[i].oszlopa==c[j].oszlopa+1 && c[i].sora==c[j].sora-1)
                             {
-                                if(c[k].color=="kek" && c[k].oszlopa+1==c[j].oszlopa-1 && c[k].sora+1==c[j].sora)
+                                if(c[k].color=="kek" && c[j].oszlopa==c[k].oszlopa+1 && c[j].sora==c[k].sora-1)
                                 {
-                                    if(c[l].color=="kek" && c[l].oszlopa+1==c[k].oszlopa-1 && c[l].sora+1==c[k].sora)
+                                    if(c[l].color=="kek" && c[k].oszlopa==c[l].oszlopa+1 && c[k].sora==c[l].sora-1)
                                         k_win=true;
                                 }
                             }
